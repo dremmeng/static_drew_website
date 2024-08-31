@@ -1,21 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: static-website-deployment
+  name: my-web-deployment
+  namespace: default
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
-      app: static-website
+      app: my-web-app
   template:
     metadata:
       labels:
-        app: static-website
+        app: my-web-app
     spec:
       containers:
-      - name: static-website
-        image: dremmeng/my-static-website:latest
-        ports:
-        - containerPort: 80
-      imagePullSecrets:
-      - name: my-registry-key
+        - name: my-web-container
+          image: dremmeng/my-static-website:latest  # Replace with your Docker image tag if needed
+          ports:
+            - containerPort: 80

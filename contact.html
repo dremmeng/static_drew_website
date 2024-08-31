@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drew Remmenga - Contact</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Contact Drew Remmenga</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Get in Touch</h2>
+            <p>If you have any questions or would like to get in touch with me, please use the contact information below
+                or fill out the form.</p>
+            <ul>
+                <li>Email: <a href="mailto:drewremmenga@gmail.com">drewremmenga@gmail.com</a></li>
+                <li>Phone: <a href="tel:+19702707758">970-270-7758</a></li>
+                <li>LinkedIn: <a href="https://www.linkedin.com/in/drew-remmenga-a75564157/" target="_blank">LinkedIn
+                        Profile</a></li>
+                <li>Resume: <a href="resume.pdf" target="_blank">Download Resume</a></li>
+            </ul>
+            <form action="submit_form.php" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+
+                <input type="submit" value="Send Message">
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Drew Remmenga. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
