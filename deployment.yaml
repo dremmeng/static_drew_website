@@ -1,20 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-web-deployment
-  namespace: default
+  name: my-static-website
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: my-web-app
+      app: website
   template:
     metadata:
       labels:
-        app: my-web-app
+        app: website
     spec:
       containers:
-        - name: my-web-container
-          image: dremmeng/my-static-website:latest  # Replace with your Docker image tag if needed
-          ports:
-            - containerPort: 80
+      - name: website
+        image: dremmeng/my-static-website:latest
+        ports:
+        - containerPort: 80
+      nodeSelector:
+        node-role.kubernetes.io/master2: master2
+        node-role.kubernetes.io/worker: worker

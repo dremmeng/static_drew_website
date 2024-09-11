@@ -1,8 +1,17 @@
-FROM nginx:alpine
-COPY nginx.conf /etc/nginx/nginx.conf
-COPY html /usr/share/nginx/html
+# Use the official Nginx image from the Docker Hub
+FROM nginx:latest
+
+# Set the working directory to the Nginx html directory
+WORKDIR /usr/share/nginx/html
+
+# Copy the local static website files into the container
+COPY / .
+
+# Optionally, you can add a custom Nginx configuration file
+# COPY nginx.conf /etc/nginx/nginx.conf
+
+# Expose port 80 to the outside world
 EXPOSE 80
+
+# Start Nginx in the foreground
 CMD ["nginx", "-g", "daemon off;"]
-# Set permissions for static files
-RUN chmod 644 /usr/share/nginx/html/index.html /usr/share/nginx/html/styles.css \
-    && chown nginx:nginx /usr/share/nginx/html/index.html /usr/share/nginx/html/styles.css
